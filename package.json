@@ -37,6 +37,6 @@
   },
   "homepage": "https://github.com/joaquimserafim/base64-url",
   "devDependencies": {
-    "tape": "^2.12.3"
+    "tape": "~2.12.3"
   }
 }
