@@ -1,0 +1,29 @@
+{
+  "name": "base64-url",
+  "version": "1.0.0",
+  "description": "Base64 encode, decode, escape and unescape for URL applications",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joaquimserafim/base64-url.git"
+  },
+  "keywords": [
+    "base64",
+    "base64url"
+  ],
+  "author": "@joaquimserafim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaquimserafim/base64-url/issues"
+  },
+  "homepage": "https://github.com/joaquimserafim/base64-url",
+  "devDependencies": {
+    "tape": "^2.12.3"
+  }
+}
