@@ -6,6 +6,7 @@ Base64 encode, decode, escape and unescape for URL applications.
 
 [![Build Status](https://travis-ci.org/joaquimserafim/base64-url.png?branch=master)](https://travis-ci.org/joaquimserafim/base64-url)
 
+[![browser support](https://ci.testling.com/joaquimserafim/base64-url.png)](https://ci.testling.com/joaquimserafim/base64-url)
 
 
 **V1**
@@ -13,14 +14,14 @@ Base64 encode, decode, escape and unescape for URL applications.
 
 ####API
     
-  	> base64url.encode('Node.js is awesome.');
-  	Tm9kZS5qcyBpcyBhd2Vzb21lLg
+	> base64url.encode('Node.js is awesome.');
+	Tm9kZS5qcyBpcyBhd2Vzb21lLg
 
-  	> base64url.decode('Tm9kZS5qcyBpcyBhd2Vzb21lLg');
-  	Node.js is awesome.
-  
- 	> base64url.escape(This+is/goingto+escape==);
-  	This-is_goingto-escape
+	> base64url.decode('Tm9kZS5qcyBpcyBhd2Vzb21lLg');
+	Node.js is awesome.
+ 
+	> base64url.escape(This+is/goingto+escape==);
+	This-is_goingto-escape
   	
     > base64url.unescape('This-is_goingto-escape');
     This+is/goingto+escape==
