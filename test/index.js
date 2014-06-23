@@ -2,7 +2,7 @@ var test = require('tape');
 var base64url = require('../');
 
 
-test('base64url', function (t) {
+test('run tests', function (t) {
   t.plan(4);
 
   var text = 'Node.js is awesome.';
