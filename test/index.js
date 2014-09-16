@@ -13,10 +13,9 @@ test('base64', function (t) {
   var decode = base64url.decode(encode);
   t.deepEqual(decode, text, 'decode: ' + decode);
 
-  var text_escape = 'This+is/goingto+escape==';
-  console.log(text_escape);
+  var textEscape = 'This+is/goingto+escape==';
 
-  var escape = base64url.escape(text_escape);
+  var escape = base64url.escape(textEscape);
   t.equal(escape.match(/\+|\//g), null, 'escape (omit + and /): ' + escape);
 
   var unescape = base64url.unescape(escape);
