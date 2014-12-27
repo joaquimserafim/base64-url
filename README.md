@@ -27,7 +27,7 @@ Base64 encode, decode, escape and unescape for URL applications.
 	> base64url.decode('Tm9kZS5qcyBpcyBhd2Vzb21lLg');
 	Node.js is awesome.
  
-	> base64url.escape(This+is/goingto+escape==);
+	> base64url.escape('This+is/goingto+escape==');
 	This-is_goingto-escape
   	
     > base64url.unescape('This-is_goingto-escape');
