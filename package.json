@@ -11,7 +11,7 @@
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/tape/bin/tape test.js",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc *.js",
-    "codestyle": "./node_modules/jscs/bin/jscs -p google *.js",
+    "code-style": "./node_modules/jscs/bin/jscs -p google *.js",
     "check-coverage": "./node_modules/istanbul/lib/cli.js check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "coverage": "open coverage/lcov-report/index.html"
   },
@@ -28,19 +28,6 @@
   "bugs": {
     "url": "https://github.com/joaquimserafim/base64-url/issues"
   },
-  "testling": {
-    "files": "test.js",
-    "browsers": [
-      "ie/6..latest",
-      "chrome/22..latest",
-      "firefox/16..latest",
-      "safari/latest",
-      "opera/11.0..latest",
-      "iphone/6",
-      "ipad/6",
-      "android-browser/latest"
-    ]
-  },
   "homepage": "https://github.com/joaquimserafim/base64-url",
   "devDependencies": {
     "istanbul": "^0.3.5",
@@ -52,7 +39,7 @@
   },
   "pre-commit": [
     "jshint",
-    "codestyle",
+    "code-style",
     "test",
     "check-coverage"
   ]

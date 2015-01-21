@@ -12,8 +12,8 @@ Base64 encode, decode, escape and unescape for URL applications.
 **code coverage:**  
 `npm test && npm run check-coverage && npm run coverage`
 
-**codestyle:**  
-`npm run codestyle`
+**code-style:**  
+`npm run code-style`
 
 **jshint:**     
 `npm run jshint`
