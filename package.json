@@ -3,9 +3,11 @@
   "version": "1.1.0",
   "description": "Base64 encode, decode, escape and unescape for URL applications",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/tape/bin/tape test.js",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc *.js",
