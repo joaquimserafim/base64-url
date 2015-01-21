@@ -7,8 +7,6 @@ Base64 encode, decode, escape and unescape for URL applications.
 [![Build Status](https://travis-ci.org/joaquimserafim/base64-url.png?branch=master)](https://travis-ci.org/joaquimserafim/base64-url)
 
 
-**V1.1**
-
 **code coverage:**  
 `npm test && npm run check-coverage && npm run coverage`
 
