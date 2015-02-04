@@ -7,17 +7,7 @@ Base64 encode, decode, escape and unescape for URL applications.
 [![Build Status](https://travis-ci.org/joaquimserafim/base64-url.png?branch=master)](https://travis-ci.org/joaquimserafim/base64-url)
 
 
-**code coverage:**  
-`npm test && npm run check-coverage && npm run coverage`
-
-**code-style:**  
-`npm run code-style`
-
-**jshint:**     
-`npm run jshint`
-
-
-####API
+## API
     
 	> base64url.encode('Node.js is awesome.');
 	Tm9kZS5qcyBpcyBhd2Vzb21lLg
@@ -31,3 +21,33 @@ Base64 encode, decode, escape and unescape for URL applications.
     > base64url.unescape('This-is_goingto-escape');
     This+is/goingto+escape==
   	
+
+## Development
+
+**this projet has been set up with a precommit that forces you to follow a code style, no jshint issues and 100% of code coverage before commit**
+
+
+to run test
+``` js
+npm test
+```
+
+to run jshint
+``` js
+npm run jshint
+```
+
+to run code style
+``` js
+npm run code-style
+```
+
+to check code coverage
+``` js
+npm run check-coverage
+```
+
+to open the code coverage report
+``` js
+npm run open-coverage
+```

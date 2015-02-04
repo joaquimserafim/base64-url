@@ -1,3 +1,5 @@
+'use strict';
+
 var tape = require('tape');
 var base64url = require('./index');
 

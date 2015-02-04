@@ -1,3 +1,5 @@
+'use strict';
+
 var base64url = module.exports;
 
 base64url.unescape = function unescape (str) {
