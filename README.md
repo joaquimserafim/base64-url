@@ -1,6 +1,6 @@
 # base64-url
 
-Base64 encode, decode, escape and unescape for URL applications.
+Base64 encode, decode, escape, unescape and random generator for URL applications.
 
 <a href="https://nodei.co/npm/base64-url/"><img src="https://nodei.co/npm/base64-url.png?downloads=true"></a>
 
@@ -21,6 +21,13 @@ Base64 encode, decode, escape and unescape for URL applications.
     > base64url.unescape('This-is_goingto-escape');
     This+is/goingto+escape==
   	
+    > base64url.pseudoRandomBytes(15, function(err, bytes) {
+      // bytes contains encoded pseudorandom bytes
+    });
+
+    > base64url.randomBytes(15, function(err, bytes) {
+      // bytes contains encoded cryptographic random bytes
+    });
 
 ## Development
 
