@@ -1,5 +1,7 @@
  language: node_js
  node_js:
+   - "node"
+   - "4.2"
    - "0.11"
    - "0.10"
    - "0.8"
@@ -10,5 +12,3 @@
   email:
    - joaquim.serafim@gmail.com
  script: npm test
- before_install:
-  - npm install -g npm@~1.4.6
