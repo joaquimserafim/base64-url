@@ -51,5 +51,5 @@ npm run check-coverage
 
 to open the code coverage report
 ``` js
-npm run open-coverage
+npm run coverage
 ```
