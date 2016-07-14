@@ -3,8 +3,7 @@
 var base64url = module.exports;
 
 base64url.unescape = function unescape (str) {
-  return (str + Array(5 - str.length % 4)
-    .join('='))
+  return (str + '==='.slice((str.length + 3) % 4))
     .replace(/\-/g, '+')
     .replace(/_/g, '/');
 };
