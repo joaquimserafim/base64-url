@@ -4,7 +4,6 @@ var tape = require('tape');
 var base64url = require('./index');
 
 tape('base64', function(assert) {
-  assert.plan(4);
 
   var text = 'Node.js is awesome.';
 
@@ -17,11 +16,32 @@ tape('base64', function(assert) {
   var textEscape = 'This+is/goingto+escape==';
 
   var escape = base64url.escape(textEscape);
-  assert.equal(escape.match(/\+|\//g), null,
-    'escape (omit + and /): ' + escape);
+
+  assert.equal(
+    escape.match(/\+|\//g),
+    null,
+    'escape (omit + and /): ' + escape
+  );
 
   var unescape = base64url.unescape(escape);
-  assert.equal(unescape.match(/\-|_/g),
+
+  assert.equal(
+    unescape.match(/\-|_/g),
     null,
-    'unescape (back to first form): ' + unescape);
+    'unescape (back to first form): ' + unescape
+  );
+
+  assert.equal(
+    base64url.unescape('1234'),
+    '1234',
+    'unescape should print 1234'
+  );
+
+  assert.equal(
+    base64url.unescape('123'),
+    '123=',
+    'unescape should print 123='
+  );
+
+  assert.end();
 });
