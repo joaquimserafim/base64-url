@@ -34,22 +34,17 @@ to run test
 npm test
 ```
 
-to run jshint
+to run lint
 ``` js
-npm run jshint
+npm run lint
 ```
 
 to run code style
 ``` js
-npm run code-style
+npm run style
 ```
 
 to check code coverage
 ``` js
-npm run check-coverage
-```
-
-to open the code coverage report
-``` js
-npm run open-coverage
+npm run coverage:check
 ```
