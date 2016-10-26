@@ -10,6 +10,8 @@ Base64 encode, decode, escape and unescape for URL applications.
 ## API
 
 ```js
+var base64url = require('base64-url');
+
 base64url.encode('Node.js is awesome.');
 // returns Tm9kZS5qcyBpcyBhd2Vzb21lLg
 
