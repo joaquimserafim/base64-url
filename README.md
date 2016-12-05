@@ -50,3 +50,7 @@ to check code coverage
 ``` js
 npm run coverage:check
 ```
+
+# Alternatives
+
+- [base64url](https://github.com/brianloveswords/base64url)
