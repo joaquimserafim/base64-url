@@ -14,10 +14,10 @@ base64url.escape = function escape (str) {
     .replace(/=/g, '');
 };
 
-base64url.encode = function encode (str) {
-  return this.escape(new Buffer(str).toString('base64'));
+base64url.encode = function encode (str, encoding) {
+  return this.escape(new Buffer(str, encoding || 'utf8').toString('base64'));
 };
 
-base64url.decode = function decode (str) {
-  return new Buffer(this.unescape(str), 'base64').toString();
+base64url.decode = function decode (str, encoding) {
+  return new Buffer(this.unescape(str), 'base64').toString(encoding || 'utf8');
 };
