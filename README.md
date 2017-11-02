@@ -32,7 +32,7 @@ base64url.unescape('This-is_goingto-escape')
 // returns This+is/goingto+escape==
 
 //
-// setting a different econding 
+// setting a different encoding 
 //
 
 base64url.encode(string to encode, encoding)
