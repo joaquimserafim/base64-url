@@ -1,6 +1,6 @@
 {
   "name": "base64-url",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Base64 encode, decode, escape and unescape for URL applications",
   "main": "index.js",
   "files": [
