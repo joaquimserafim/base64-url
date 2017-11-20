@@ -3,15 +3,22 @@
 const base64url = module.exports
 
 base64url.unescape = function unescape (str) {
-  return (str + '==='.slice((str.length + 3) % 4))
-    .replace(/-/g, '+')
-    .replace(/_/g, '/')
+  return (str + '==='.slice((str.length + 3) % 4)).replace(/[_-]/g, function (c) {
+    return c === '-' ? '+' : '/';
+  });
 }
 
 base64url.escape = function escape (str) {
-  return str.replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=/g, '')
+  return str.replace(/[_-+]/g, function (c) {
+    if (c === '+') {
+        return '-';
+    }
+    if (c === '/') {
+        return '_';
+    }
+    // =
+    return '';
+  });
 }
 
 base64url.encode = function encode (str, encoding) {
