@@ -1,6 +1,6 @@
 {
   "name": "base64-url",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Base64 encode, decode, escape and unescape for URL applications",
   "main": "index.js",
   "files": [
@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/joaquimserafim/base64-url",
   "devDependencies": {
-    "coveralls": "^2.13.1",
-    "nyc": "^11.1.0",
+    "coveralls": "^3.0.0",
+    "nyc": "^11.4.1",
     "pre-commit": "^1.2.2",
     "standard": "^10.0.3",
     "tape": "^4.8.0"

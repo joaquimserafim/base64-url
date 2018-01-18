@@ -1,23 +1,28 @@
 'use strict'
 
-const base64url = module.exports
+module.exports = {
+  unescape,
+  escape,
+  encode,
+  decode
+}
 
-base64url.unescape = function unescape (str) {
+function unescape (str) {
   return (str + '==='.slice((str.length + 3) % 4))
     .replace(/-/g, '+')
     .replace(/_/g, '/')
 }
 
-base64url.escape = function escape (str) {
+function escape (str) {
   return str.replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=/g, '')
 }
 
-base64url.encode = function encode (str, encoding) {
-  return this.escape(Buffer.from(str, encoding || 'utf8').toString('base64'))
+function encode (str, encoding) {
+  return escape(Buffer.from(str, encoding || 'utf8').toString('base64'))
 }
 
-base64url.decode = function decode (str, encoding) {
-  return Buffer.from(this.unescape(str), 'base64').toString(encoding || 'utf8')
+function decode (str, encoding) {
+  return Buffer.from(unescape(str), 'base64').toString(encoding || 'utf8')
 }
