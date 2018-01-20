@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "description": "Base64 encode, decode, escape and unescape for URL applications",
   "main": "index.js",
-  "types": "./lib/index.d.ts",
+  "types": "index.d.ts",
   "files": [
     "LICENSE",
     "README.md",
