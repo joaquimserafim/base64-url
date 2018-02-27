@@ -1,10 +1,10 @@
 'use strict'
 
 module.exports = {
-  unescape,
-  escape,
-  encode,
-  decode
+  unescape: unescape,
+  escape: escape,
+  encode: encode,
+  decode: decode
 }
 
 function unescape (str) {
