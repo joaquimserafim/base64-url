@@ -1,13 +1,9 @@
 {
   "name": "base64-url",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Base64 encode, decode, escape and unescape for URL applications",
   "main": "index.js",
-  "files": [
-    "LICENSE",
-    "README.md",
-    "index.js"
-  ],
+  "files": ["LICENSE", "README.md", "index.js"],
   "scripts": {
     "coverage:open": "open coverage/index.html",
     "coverage:check": "nyc check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
@@ -18,10 +14,7 @@
     "type": "git",
     "url": "git://github.com/joaquimserafim/base64-url.git"
   },
-  "keywords": [
-    "base64",
-    "base64url"
-  ],
+  "keywords": ["base64", "base64url"],
   "author": "@joaquimserafim",
   "license": "ISC",
   "bugs": {
@@ -35,10 +28,7 @@
     "standard": "^10.0.3",
     "tape": "^4.8.0"
   },
-  "pre-commit": [
-    "test",
-    "coverage:check"
-  ],
+  "pre-commit": ["test", "coverage:check"],
   "engines": {
     "node": ">=6"
   }
