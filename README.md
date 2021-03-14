@@ -46,3 +46,5 @@ base64url.decode(string to decode, encoding)
 # Alternatives
 
 - [base64url](https://github.com/brianloveswords/base64url)
+
+### Attention: only tested with NodeJS
