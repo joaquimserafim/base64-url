@@ -20,7 +20,8 @@ function escape (str) {
 }
 
 function encode (str, encoding) {
-  return escape(Buffer.from(str, encoding || 'utf8').toString('base64'))
+  var buff = Buffer.isBuffer(str) ? str : Buffer.from(str, encoding || 'utf8')
+  return escape(buff.toString('base64'))
 }
 
 function decode (str, encoding) {
