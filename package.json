@@ -2,19 +2,36 @@
   "name": "base64-url",
   "version": "2.3.3",
   "description": "Base64 encode, decode, escape and unescape for URL applications",
-  "main": "index.js",
-  "files": ["LICENSE", "README.md", "index.js"],
+  "type": "module",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "index.cjs",
+    "index.d.ts"
+  ],
   "scripts": {
-    "coverage:open": "open coverage/index.html",
-    "coverage:check": "nyc check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "standard --fix && nyc --reporter=html --reporter=text tape test.js"
+    "test": "node test.js && node test.cjs"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/joaquimserafim/base64-url.git"
   },
-  "keywords": ["base64", "base64url"],
+  "keywords": [
+    "base64",
+    "base64url",
+    "esm"
+  ],
   "author": "@joaquimserafim",
   "license": "ISC",
   "bugs": {
@@ -28,8 +45,10 @@
     "standard": "^10.0.3",
     "tape": "^4.8.0"
   },
-  "pre-commit": ["test", "coverage:check"],
+  "pre-commit": [
+    "test"
+  ],
   "engines": {
-    "node": ">=6"
+    "node": ">=12"
   }
 }

@@ -1,33 +1,31 @@
-'use strict'
+import test from 'tape'
+import base64url, { decode, encode, escape, unescape } from './index.js'
 
-const test = require('tape')
-const base64url = require('./index')
+test('base64 - default export', function (assert) {
+  const text = 'Node.js is awesome.'
 
-test('base64', function (assert) {
-  let text = 'Node.js is awesome.'
+  const encoded = base64url.encode(text)
+  assert.ok(encoded, 'encode: ' + encoded)
 
-  let encode = base64url.encode(text)
-  assert.ok(encode, 'encode: ' + encode)
+  const decoded = base64url.decode(encoded)
+  assert.deepEqual(decoded, text, 'decode: ' + decoded)
 
-  let decode = base64url.decode(encode)
-  assert.deepEqual(decode, text, 'decode: ' + decode)
+  const textEscape = 'This+is/goingto+escape=='
 
-  let textEscape = 'This+is/goingto+escape=='
-
-  let escape = base64url.escape(textEscape)
+  const escaped = base64url.escape(textEscape)
 
   assert.equal(
-    escape.match(/\+|\//g),
+    escaped.match(/\+|\//g),
     null,
-    'escape (omit + and /): ' + escape
+    'escape (omit + and /): ' + escaped
   )
 
-  let unescape = base64url.unescape(escape)
+  const unescaped = base64url.unescape(escaped)
 
   assert.equal(
-    unescape.match(/-|_/g),
+    unescaped.match(/-|_/g),
     null,
-    'unescape (back to initial state): ' + unescape
+    'unescape (back to initial state): ' + unescaped
   )
 
   assert.equal(
@@ -45,7 +43,37 @@ test('base64', function (assert) {
   assert.end()
 })
 
-test('using a different econding with the encode and decode methods',
+test('base64 - named exports', function (assert) {
+  const text = 'Node.js is awesome.'
+
+  const encoded = encode(text)
+  assert.ok(encoded, 'encode: ' + encoded)
+
+  const decoded = decode(encoded)
+  assert.deepEqual(decoded, text, 'decode: ' + decoded)
+
+  const textEscape = 'This+is/goingto+escape=='
+
+  const escaped = escape(textEscape)
+
+  assert.equal(
+    escaped.match(/\+|\//g),
+    null,
+    'escape (omit + and /): ' + escaped
+  )
+
+  const unescaped = unescape(escaped)
+
+  assert.equal(
+    unescaped.match(/-|_/g),
+    null,
+    'unescape (back to initial state): ' + unescaped
+  )
+
+  assert.end()
+})
+
+test('using a different encoding with the encode and decode methods',
   function (assert) {
     assert.equal(
       base64url.encode('ride: dreams burn down', 'ascii'),
@@ -57,6 +85,18 @@ test('using a different econding with the encode and decode methods',
       base64url.decode('cmlkZTogZHJlYW1zIGJ1cm4gZG93bg', 'ascii'),
       'ride: dreams burn down',
       'should return `ride: dreams burn down`'
+    )
+
+    assert.equal(
+      encode('ride: dreams burn down', 'ascii'),
+      'cmlkZTogZHJlYW1zIGJ1cm4gZG93bg',
+      'named export should return `cmlkZTogZHJlYW1zIGJ1cm4gZG93bg`'
+    )
+
+    assert.equal(
+      decode('cmlkZTogZHJlYW1zIGJ1cm4gZG93bg', 'ascii'),
+      'ride: dreams burn down',
+      'named export should return `ride: dreams burn down`'
     )
 
     assert.end()
