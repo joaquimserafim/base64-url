@@ -1,0 +1,8 @@
+allowBuilds:
+  "@biomejs/biome": true
+  esbuild: true
+
+# Remove when tsup supports esbuild >=0.28.1 (GHSA-g7r4-m6w7-qqqr).
+# Keep in sync with package.json overrides for npm's Git dependency builds.
+overrides:
+  "tsup>esbuild": "0.28.1"
