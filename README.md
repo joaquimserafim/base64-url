@@ -1,5 +1,8 @@
 # base64-url
 
+[![CI](https://github.com/joaquimserafim/base64-url/actions/workflows/ci.yml/badge.svg)](https://github.com/joaquimserafim/base64-url/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/base64-url.svg)](https://www.npmjs.com/package/base64-url)
+
 Base64url encoding, decoding, canonical validation, and Base64 conversion for **Node.js only**.
 
 Requires **Node.js 24 or newer**. Zero runtime dependencies. Ships ESM and CommonJS builds with TypeScript declarations for each module format.

@@ -30,15 +30,15 @@
 	},
 	"packageManager": "pnpm@10.34.6",
 	"scripts": {
-		"build": "tsup && node scripts/finalize-build.mjs",
+		"build": "tsup && node -e \"require('node:fs').renameSync('dist/index.d.ts', 'dist/index.d.mts')\"",
 		"typecheck": "tsc --noEmit",
 		"lint": "biome check .",
 		"format": "biome check --write .",
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
-		"test:package": "node scripts/test-package.mjs",
-		"test:git": "node scripts/test-git-install.mjs",
+		"test:package": "node test/package.mjs",
+		"test:git": "node test/git-install.mjs",
 		"check": "pnpm typecheck && pnpm lint && pnpm test:coverage && pnpm build && pnpm test:package",
 		"prepare": "node --run build",
 		"prepublishOnly": "pnpm check"
