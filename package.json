@@ -1,35 +1,75 @@
 {
-  "name": "base64-url",
-  "version": "2.3.3",
-  "description": "Base64 encode, decode, escape and unescape for URL applications",
-  "main": "index.js",
-  "files": ["LICENSE", "README.md", "index.js"],
-  "scripts": {
-    "coverage:open": "open coverage/index.html",
-    "coverage:check": "nyc check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "standard --fix && nyc --reporter=html --reporter=text tape test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/joaquimserafim/base64-url.git"
-  },
-  "keywords": ["base64", "base64url"],
-  "author": "@joaquimserafim",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joaquimserafim/base64-url/issues"
-  },
-  "homepage": "https://github.com/joaquimserafim/base64-url",
-  "devDependencies": {
-    "coveralls": "^3.0.0",
-    "nyc": "^14.1.1",
-    "pre-commit": "^1.2.2",
-    "standard": "^10.0.3",
-    "tape": "^4.8.0"
-  },
-  "pre-commit": ["test", "coverage:check"],
-  "engines": {
-    "node": ">=6"
-  }
+	"name": "base64-url",
+	"version": "3.0.0",
+	"description": "Base64url encoding, decoding, and canonical validation for Node.js only (24+)",
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		},
+		"./package.json": "./package.json"
+	},
+	"sideEffects": false,
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=24"
+	},
+	"packageManager": "pnpm@10.34.6",
+	"scripts": {
+		"build": "tsup && node scripts/finalize-build.mjs",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome check .",
+		"format": "biome check --write .",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"test:package": "node scripts/test-package.mjs",
+		"test:git": "node scripts/test-git-install.mjs",
+		"check": "pnpm typecheck && pnpm lint && pnpm test:coverage && pnpm build && pnpm test:package",
+		"prepare": "node --run build",
+		"prepublishOnly": "pnpm check"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joaquimserafim/base64-url.git"
+	},
+	"keywords": [
+		"base64",
+		"base64url",
+		"esm",
+		"typescript"
+	],
+	"author": "@joaquimserafim",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/joaquimserafim/base64-url/issues"
+	},
+	"homepage": "https://github.com/joaquimserafim/base64-url#readme",
+	"overrides": {
+		"tsup": {
+			"esbuild": "0.28.1"
+		}
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.15",
+		"@types/node": "^24.19.1",
+		"@vitest/coverage-v8": "^4.1.7",
+		"tsup": "^8.5.1",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.7"
+	}
 }

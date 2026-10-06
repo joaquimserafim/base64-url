@@ -1,5 +1,9 @@
 node_modules
+dist
+coverage
 *.log
 .DS_Store
-coverage
-.nyc*
+.pnpm-store/
+*.tgz
+*.tsbuildinfo
+emitted/
