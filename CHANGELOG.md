@@ -1,6 +1,17 @@
 # Changelog
 
-## 3.0.0 — Unreleased
+## 3.0.1 — Unreleased
+
+### Added
+
+- CI and npm version badges in the README.
+
+### Changed
+
+- Move packed-package and Git-install checks into `test/` and remove the `scripts/` directory.
+- Run sourcemap cleanup in the tsup configuration and declaration renaming inline in the build command, preserving the generated package contents.
+
+## 3.0.0 — 2026-10-06
 
 ### Breaking changes
 

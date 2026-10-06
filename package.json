@@ -1,6 +1,6 @@
 {
 	"name": "base64-url",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Base64url encoding, decoding, and canonical validation for Node.js only (24+)",
 	"type": "module",
 	"main": "./dist/index.cjs",
